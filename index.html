@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elena Warren · modern photography</title>
+  <style>
+    /* ----- MODERN RESET & BASE ----- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', 'Helvetica Neue', sans-serif;
+      background: #fcfcfc;   /* soft white with a hint of warmth */
+      color: #1e1e1e;
+      line-height: 1.5;
+      font-weight: 350;
+    }
+
+    /* modern headings: slightly tighter, all-caps not necessary */
+    h1, h2, h3 {
+      font-weight: 450;
+      letter-spacing: -0.01em;
+    }
+
+    .container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ----- HEADER with top-right navigation (modern minimal) ----- */
+    header {
+      padding: 2rem 2rem 1.2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fcfcfc;
+      border-bottom: 1px solid #eaeaea;
+    }
+
+    .logo a {
+      font-size: 1.4rem;
+      font-weight: 450;
+      text-decoration: none;
+      color: #1e1e1e;
+      letter-spacing: -0.02em;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #2c2c2c;
+      font-size: 0.95rem;
+      font-weight: 400;
+      transition: color 0.2s;
+    }
+
+    nav a:hover, nav a.active {
+      color: #a67c5b;   /* warm terracotta accent */
+    }
+
+    /* ----- PAGE CONTENT (loaded via JS) ----- */
+    #dynamic-content {
+      min-height: 60vh;
+      padding: 3rem 0 4rem;
+    }
+
+    /* ----- modern page styles ----- */
+    .page-title {
+      font-size: 2.8rem;
+      font-weight: 450;
+      margin-bottom: 1.5rem;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 460px;
+      background-color: #eae2da;
+      background-size: cover;
+      background-position: center;
+      margin: 2rem 0 3rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin: 2.5rem 0;
+    }
+
+    @media (max-width: 700px) {
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+
+    .text-large {
+      font-size: 1.3rem;
+      color: #4a4a4a;
+      margin-bottom: 1.5rem;
+    }
+
+    /* portfolio grid (clean, spacious) */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+      margin: 2.5rem 0;
+    }
+
+    .card {
+      background: white;
+      border-radius: 0;
+      overflow: hidden;
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    .card-img {
+      width: 100%;
+      height: 320px;
+      background-color: #f0ebe6;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .card-content {
+      padding: 1rem 0 0.5rem;
+    }
+
+    .card-category {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #a67c5b;
+      margin-bottom: 0.2rem;
+    }
+
+    .card-title {
+      font-weight: 450;
+      font-size: 1.1rem;
+    }
+
+    /* about page specific */
+    .about-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4rem;
+      align-items: center;
+      margin: 3rem 0;
+    }
+
+    .portrait-modern {
+      width: 300px;
+      height: 300px;
+      background: #dcd2c9;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%23b7a287"><circle cx="50" cy="40" r="20"/><circle cx="50" cy="90" r="28"/></svg>');
+      background-size: cover;
+      background-position: center 30%;
+      border-radius: 2px;
+    }
+
+    .contact-modern {
+      background: #ffffff;
+      padding: 2.5rem;
+      border: 1px solid #efefef;
+      display: inline-block;
+      margin: 2rem 0;
+    }
+
+    .contact-modern p {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .contact-modern a {
+      color: #1e1e1e;
+      text-decoration: none;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .contact-modern a:hover {
+      border-bottom-color: #a67c5b;
+    }
+
+    /* home page specific */
+    .home-intro {
+      padding: 3rem 0 2rem;
+    }
+
+    .home-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin: 4rem 0;
+    }
+
+    @media (max-width: 700px) {
+      .home-grid { grid-template-columns: 1fr; }
+    }
+
+    .home-item {
+      height: 400px;
+      background: #ece3db;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: flex-end;
+      padding: 1.5rem;
+      color: white;
+      text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      font-size: 1.8rem;
+      font-weight: 400;
+    }
+
+    footer {
+      padding: 3rem 2rem;
+      text-align: center;
+      color: #8f8f8f;
+      border-top: 1px solid #eaeaea;
+      background: #fcfcfc;
+    }
+
+    /* active nav style */
+    nav a.active {
+      color: #a67c5b;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ========== HEADER (same on every page) ========== -->
+<header>
+  <div class="logo"><a href="?page=home" id="logo-link">Elena Warren</a></div>
+  <nav>
+    <ul>
+      <li><a href="?page=home" class="nav-link" data-page="home">Home</a></li>
+      <li><a href="?page=wedding" class="nav-link" data-page="wedding">Wedding</a></li>
+      <li><a href="?page=business" class="nav-link" data-page="business">Business</a></li>
+      <li><a href="?page=about" class="nav-link" data-page="about">About</a></li>
+      <li><a href="?page=contact" class="nav-link" data-page="contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ===== DYNAMIC CONTENT AREA (pages loaded here) ===== -->
+<main id="dynamic-content" class="container">
+  <!-- initial placeholder — will be replaced by JS with home page -->
+  <div style="text-align: center; padding: 4rem 0;">loading ...</div>
+</main>
+
+<footer>
+  <p>© Elena Warren photography — modern & timeless</p>
+</footer>
+
+<script>
+  (function() {
+    // ----- PAGE DEFINITIONS (modern style, separate home + 4 pages) -----
+    const pages = {
+      // HOME page (unique)
+      home: `
+        <div class="home-intro">
+          <h1 class="page-title">Elena Warren <span style="font-weight:300; color:#7f7f7f;">photography</span></h1>
+          <div class="text-large" style="max-width:700px;">Documentary‑inspired imagery for weddings, brands and the in‑between.</div>
+        </div>
+        <div class="hero-image" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%25\' height=\'100%25\' viewBox=\'0 0 100 100\'><rect width=\'100\' height=\'100\' fill=\'%23d9cdc2\'/><circle cx=\'30\' cy=\'35\' r=\'12\' fill=\'%23b7a287\'/><circle cx=\'70\' cy=\'35\' r=\'12\' fill=\'%23b7a287\'/><path d=\'M20 70 Q50 96, 80 70\' stroke=\'%23948173\' stroke-width=\'5\' fill=\'none\'/></svg>');"></div>
+        <div class="home-grid">
+          <div class="home-item" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'><rect width=\'100\' height=\'100\' fill=\'%23b7a287\'/><circle cx=\'30\' cy=\'40\' r=\'12\' fill=\'%23e7d9cd\'/><circle cx=\'70\' cy=\'40\' r=\'12\' fill=\'%23e7d9cd\'/><path d=\'M20 70 Q50 96, 80 70\' stroke=\'%23ffffff\' stroke-width=\'4\' fill=\'none\'/></svg>');">Wedding</div>
+          <div class="home-item" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'><rect width=\'100\' height=\'100\' fill=\'%239f8b78\'/><circle cx=\'50\' cy=\'45\' r=\'20\' fill=\'%23e7d9cd\'/><rect x=\'35\' y=\'65\' width=\'30\' height=\'30\' fill=\'%23ffffff\' opacity=\'0.8\'/></svg>');">Headshots</div>
+          <div class="home-item" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'><rect width=\'100\' height=\'100\' fill=\'%23ae9b8b\'/><circle cx=\'50\' cy=\'40\' r=\'28\' fill=\'%23dacfc7\'/></svg>');">Film</div>
+        </div>
+        <p style="text-align:center; color:#6f6f6f; margin: 3rem 0;">Based in the pacific northwest · available worldwide</p>
+      `,
+
+      // WEDDING page
+      wedding: `
+        <h1 class="page-title">Wedding</h1>
+        <div class="hero-image" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%25\' height=\'100%25\' viewBox=\'0 0 100 100\'><rect width=\'100\' height=\'100\' fill=\'%23e1d5cb\'/><circle cx=\'35\' cy=\'40\' r=\'14\' fill=\'%23b7a287\'/><circle cx=\'65\' cy=\'40\' r=\'14\' fill=\'%23b7a287\'/><path d=\'M25 70 Q50 98, 75 70\' stroke=\'%23948173\' stroke-width=\'5\' fill=\'none\'/></svg>');"></div>
+        <div class="grid-2">
+          <div><p class="text-large">Intimate, candid, and timeless. I document the real moments between laughter and tears.</p></div>
+          <div><p>From elopements in the redwoods to lavish vineyard receptions, my approach is unobtrusive. I want you to remember the feeling of the day, not the camera.</p></div>
+        </div>
+        <div class="portfolio-grid">
+          <div class="card"><div class="card-img" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'><rect width=\'100\' height=\'100\' fill=\'%23ded2c7\'/><circle cx=\'40\' cy=\'45\' r=\'14\' fill=\'%23b7a287\'/><circle cx=\'60\' cy=\'45\' r=\'14\' fill=\'%23b7a287\'/><path d=\'M30 75 Q50 94, 70 75\' stroke=\'%23948173\' stroke-width=\'4\' fill=\'none\'/></svg>');"></div><div class="card-content"><span class="card-category">wedding</span><div class="card-title">Claire + David</div></div></div>
+          <div class="card"><div class="card-img" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'><rect width=\'100\' height=\'100\' fill=\'%23e7ddd4\'/><circle cx=\'30\' cy=\'45\' r=\'12\' fill=\'%23b7a287\'/><circle cx=\'70\' cy=\'45\' r=\'12\' fill=\'%23b7a287\'/><path d=\'M20 75 Q50 96, 80 75\' stroke=\'%23948173\' stroke-width=\'4\' fill=\'none\'/></svg>');"></div><div class="card-content"><span class="card-category">wedding</span><div class="card-title">Megan + Peter</div></div></div>
+          <div class="card"><div class="card-img" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'><rect width=\'100\' height=\'100\' fill=\'%23d7c9bc\'/><circle cx=\'45\' cy=\'40\' r=\'13\' fill=\'%239f8b78\'/><circle cx=\'55\' cy=\'40\' r=\'13\' fill=\'%239f8b78\'/><path d=\'M30 72 Q50 92, 70 72\' stroke=\'%23847464\' stroke-width=\'4\' fill=\'none\'/></svg>');"></div><div class="card-content"><span class="card-category">wedding</span><div class="card-title">Anna + William</div></div></div>
+        </div>
+        <p style="margin:2rem 0;">Investment begins at $4,800. All wedding collections include a second shooter and online gallery.</p>
+      `,
+
+      // BUSINESS page (headshots)
+      business: `
+        <h1 class="page-title">Business Headshots</h1>
+        <div class="hero-image" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%25\' height=\'100%25\' viewBox=\'0 0 100 100\'><rect width=\'100\' height=\'100\' fill=\'%23ded6cf\'/><circle cx=\'50\' cy=\'45\' r=\'22\' fill=\'%23b7a287\'/><rect x=\'35\' y=\'68\' width=\'30\' height=\'28\' fill=\'%239f8b78\'/></svg>');"></div>
+        <div class="grid-2">
+          <div><p class="text-large">Contemporary headshots for brands, LinkedIn, and executive presence.</p></div>
+          <div><p>Natural light or studio strobes — we create a look that feels like you. Quick turnaround, relaxed direction, and high‑res files with full printing rights.</p></div>
+        </div>
+        <div style="background:#f5f2f0; padding:2.5rem; margin:3rem 0;">
+          <p style="font-size:1.4rem; margin-bottom:0.5rem;">individual session $495</p>
+          <p style="color:#6f6f6f;">team packages · on‑location · custom branding</p>
+        </div>
+        <div class="portfolio-grid">
+          <div class="card"><div class="card-img" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'><rect width=\'100\' height=\'100\' fill=\'%23ddd3cb\'/><circle cx=\'50\' cy=\'45\' r=\'22\' fill=\'%23b7a287\'/><rect x=\'35\' y=\'68\' width=\'30\' height=\'28\' fill=\'%23907e6d\'/></svg>');"></div><div class="card-content"><span class="card-category">headshot</span><div class="card-title">Legal team</div></div></div>
+          <div class="card"><div class="card-img" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'><rect width=\'100\' height=\'100\' fill=\'%23e9e0d9\'/><circle cx=\'50\' cy=\'42\' r=\'20\' fill=\'%23b7a287\'/><rect x=\'35\' y=\'62\' width=\'30\' height=\'30\' fill=\'%23907e6d\'/></svg>');"></div><div class="card-content"><span class="card-category">headshot</span><div class="card-title">Creative director</div></div></div>
+          <div class="card"><div class="card-img" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'><rect width=\'100\' height=\'100\' fill=\'%23e3d9d1\'/><circle cx=\'50\' cy=\'45\' r=\'22\' fill=\'%239f8b78\'/><rect x=\'35\' y=\'68\' width=\'30\' height=\'28\' fill=\'%23847464\'/></svg>');"></div><div class="card-content"><span class="card-category">headshot</span><div class="card-title">Startup founder</div></div></div>
+        </div>
+      `,
+
+      // ABOUT page
+      about: `
+        <h1 class="page-title">About Elena</h1>
+        <div class="about-wrap">
+          <div class="portrait-modern"></div>
+          <div style="flex:1;">
+            <p class="text-large">I photograph people as they are — not as they think they should be.</p>
+            <p style="margin:1.5rem 0;">Ten years ago I picked up a camera to shoot punk shows in Seattle. That documentary energy stayed with me. Now I work with couples and entrepreneurs to capture quiet confidence, real laughter, and the in‑between moments that feel like home.</p>
+            <p>I split my time between the Olympic peninsula and a small studio in Fremont. When I'm not shooting, I'm probably reading sci‑fi or hunting for the perfect cup of coffee.</p>
+            <p style="margin-top:2rem;">— Elena</p>
+          </div>
+        </div>
+      `,
+
+      // CONTACT page
+      contact: `
+        <h1 class="page-title">Contact</h1>
+        <div class="hero-image" style="height:300px; background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%25\' height=\'100%25\' viewBox=\'0 0 100 100\'><rect width=\'100\' height=\'100\' fill=\'%23ddd0c4\'/><path d=\'M20,50 L80,50\' stroke=\'%23a67c5b\' stroke-width=\'2\' /><circle cx=\'30\' cy=\'50\' r=\'6\' fill=\'%23a67c5b\'/><circle cx=\'70\' cy=\'50\' r=\'6\' fill=\'%23a67c5b\'/></svg>');"></div>
+        <div class="contact-modern">
+          <p>✶ <a href="mailto:hello@elenawarren.com">hello@elenawarren.com</a></p>
+          <p>✶ +1 (206) 555 9420</p>
+          <p>✶ instagram.com/elena.warren</p>
+          <p style="margin-top:2rem;">Seattle · available for travel</p>
+        </div>
+        <p style="font-size:1.2rem; max-width:600px;">Wedding inquiries, headshot bookings, or just to say hello — I’d love to hear from you. Response within 24 hours.</p>
+      `
+    };
+
+    // get page from URL param 'page'
+    function getPageFromURL() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get('page'); // 'home', 'wedding', 'business', 'about', 'contact'
+    }
+
+    // load page and update active class
+    function loadPage(pageId) {
+      const valid = ['home', 'wedding', 'business', 'about', 'contact'];
+      if (!valid.includes(pageId)) pageId = 'home'; // default to home
+
+      const contentDiv = document.getElementById('dynamic-content');
+      if (contentDiv) {
+        contentDiv.innerHTML = pages[pageId] || '<p>Page not found</p>';
+      }
+
+      // update active nav class
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('data-page') === pageId) {
+          link.classList.add('active');
+        }
+      });
+
+      // update URL without reload
+      const url = new URL(window.location);
+      url.searchParams.set('page', pageId);
+      window.history.replaceState({}, '', url);
+    }
+
+    // click handlers
+    function init() {
+      const initialPage = getPageFromURL() || 'home';
+      loadPage(initialPage);
+
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const page = link.getAttribute('data-page');
+          loadPage(page);
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      });
+
+      // also logo click should go to home
+      const logoLink = document.getElementById('logo-link');
+      if (logoLink) {
+        logoLink.addEventListener('click', (e) => {
+          e.preventDefault();
+          loadPage('home');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+</script>
+
+</body>
+</html>
