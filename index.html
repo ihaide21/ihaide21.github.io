@@ -1,424 +1,444 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>lumen + coe | wedding photography</title>
-  <!-- 
-    MODERN WEDDING PHOTOGRAPHY BUSINESS PAGE
-    — minimalist, high-end, ready for your images
-    — fully responsive, semantic, and easy to customize
-  -->
-  <style>
-    /* -------------------- RESET & VARIABLES -------------------- */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>lumen + coe | wedding photography</title>
 
-    body {
-      background-color: #faf8f6;   /* soft linen */
-      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      color: #1e1e1e;
-      line-height: 1.5;
-      font-weight: 350;
-      -webkit-font-smoothing: antialiased;
-    }
+<style>
 
-    /* -------------------- TYPOGRAPHY -------------------- */
-    h1, h2, h3 {
-      font-weight: 400;
-      letter-spacing: -0.02em;
-    }
+/* RESET */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-    .section-title {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-weight: 500;
-      color: #8f8177;
-      margin-bottom: 1.5rem;
-    }
+body{
+background-color:#faf8f6;
+font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+color:#1e1e1e;
+line-height:1.5;
+font-weight:350;
+-webkit-font-smoothing:antialiased;
+}
 
-    /* -------------------- UTILITY -------------------- */
-    .container {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 0 5%;
-    }
+/* TYPOGRAPHY */
 
-    /* -------------------- HEADER & NAV -------------------- */
-    header {
-      padding: 2rem 5%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      border-bottom: 1px solid #e9e1da;
-    }
+h1,h2,h3{
+font-weight:400;
+letter-spacing:-0.02em;
+}
 
-    .logo {
-      font-size: 1.5rem;
-      font-weight: 450;
-      letter-spacing: -0.02em;
-      text-decoration: none;
-      color: #1e1e1e;
-    }
-    .logo span {
-      font-weight: 250;
-      color: #a28f83;
-    }
+.section-title{
+font-size:0.75rem;
+text-transform:uppercase;
+letter-spacing:3px;
+font-weight:500;
+color:#8f8177;
+margin-bottom:1.5rem;
+}
 
-    .nav-links {
-      display: flex;
-      gap: 2.5rem;
-    }
-    .nav-links a {
-      text-decoration: none;
-      color: #1e1e1e;
-      font-size: 0.9rem;
-      font-weight: 450;
-      text-transform: uppercase;
-      letter-spacing: 1.2px;
-      transition: opacity 0.2s;
-    }
-    .nav-links a:hover {
-      opacity: 0.55;
-    }
+/* CONTAINER */
 
-    /* -------------------- HERO -------------------- */
-    .hero {
-      padding: 5rem 5% 6rem;
-      background-color: #f4efea;
-      margin-bottom: 2rem;
-    }
-    .hero-content {
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    .hero h1 {
-      font-size: clamp(2.8rem, 8vw, 5.5rem);
-      font-weight: 400;
-      line-height: 1.0;
-      letter-spacing: -0.03em;
-      margin-bottom: 1.8rem;
-      color: #24201c;
-    }
-    .hero h1 em {
-      font-style: normal;
-      color: #a28f83;
-      font-weight: 300;
-      border-bottom: 2px solid #cebcb0;
-    }
-    .hero p {
-      font-size: 1.3rem;
-      color: #4b413b;
-      max-width: 650px;
-      font-weight: 320;
-    }
+.container{
+max-width:1400px;
+margin:0 auto;
+padding:0 5%;
+}
 
-    /* -------------------- PORTFOLIO GRID -------------------- */
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.8rem;
-      margin: 4rem 0 5rem;
-    }
-    .portfolio-item {
-      background: #f0e9e3;  /* placeholder until you add images */
-      aspect-ratio: 4 / 5;
-      width: 100%;
-      transition: all 0.2s ease;
-      position: relative;
-      overflow: hidden;
-    }
-    /* this is where YOU will add background-image later */
-    .portfolio-item img-placeholder {
-      display: none; 
-    }
+/* HEADER */
 
-    /* tonal variations for visual interest (remove when you add photos) */
-    .item-1 { background-color: #d9cec5; }
-    .item-2 { background-color: #cbbeb4; }
-    .item-3 { background-color: #beae9f; }
-    .item-4 { background-color: #d3c5ba; }
-    .item-5 { background-color: #c2b2a5; }
-    .item-6 { background-color: #b09e8f; }
+header{
+padding:2rem 5%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+gap:1.5rem;
+border-bottom:1px solid #e9e1da;
+}
 
-    .portfolio-item:hover {
-      transform: scale(0.98);
-      opacity: 0.9;
-    }
+.logo{
+font-size:1.5rem;
+font-weight:450;
+letter-spacing:-0.02em;
+text-decoration:none;
+color:#1e1e1e;
+}
 
-    .portfolio-caption {
-      margin-top: 0.8rem;
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.9rem;
-      color: #4c423c;
-      letter-spacing: 0.3px;
-      border-top: 1px solid #e1d6ce;
-      padding-top: 0.6rem;
-    }
-    .portfolio-caption .date {
-      color: #95877e;
-    }
+.logo span{
+font-weight:250;
+color:#a28f83;
+}
 
-    /* -------------------- ABOUT + STATS -------------------- */
-    .about-section {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 4rem;
-      margin: 6rem 0;
-      align-items: center;
-    }
-    .about-image {
-      flex: 1 1 280px;
-      background-color: #cfc1b7;  /* replace with your photo */
-      aspect-ratio: 5 / 6;
-      width: 100%;
-      border-radius: 0; /* keep it sharp */
-    }
-    .about-content {
-      flex: 2 1 400px;
-    }
-    .about-content h2 {
-      font-size: 2.8rem;
-      font-weight: 380;
-      line-height: 1.1;
-      margin-bottom: 1.5rem;
-      max-width: 600px;
-    }
-    .about-content p {
-      font-size: 1.15rem;
-      color: #4f453e;
-      max-width: 500px;
-      margin-bottom: 2rem;
-    }
-    .stats {
-      display: flex;
-      gap: 3rem;
-      margin-top: 2rem;
-    }
-    .stat-item {
-      font-size: 2rem;
-      font-weight: 350;
-      line-height: 1;
-    }
-    .stat-item span {
-      display: block;
-      font-size: 0.8rem;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: #897b71;
-      margin-top: 0.5rem;
-    }
+.nav-links{
+display:flex;
+gap:2.5rem;
+}
 
-    /* -------------------- SERVICES / OFFERINGS -------------------- */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      margin: 4rem 0 5rem;
-    }
-    .service-card {
-      border-top: 1px solid #dad0c8;
-      padding-top: 1.8rem;
-    }
-    .service-card h3 {
-      font-size: 1.5rem;
-      font-weight: 380;
-      margin-bottom: 0.8rem;
-    }
-    .service-card p {
-      color: #645a53;
-      font-size: 1rem;
-    }
-    @media (max-width: 700px) {
-      .services-grid { grid-template-columns: 1fr; }
-    }
+.nav-links a{
+text-decoration:none;
+color:#1e1e1e;
+font-size:0.9rem;
+font-weight:450;
+text-transform:uppercase;
+letter-spacing:1.2px;
+transition:opacity .2s;
+}
 
-    /* -------------------- CONTACT & INQUIRY -------------------- */
-    .contact-section {
-      background-color: #1e1e1e;
-      color: #f4efea;
-      padding: 5rem 5%;
-      margin: 5rem 0 0;
-    }
-    .contact-flex {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 3rem;
-    }
-    .contact-left h3 {
-      font-size: 2.2rem;
-      font-weight: 360;
-      margin-bottom: 0.8rem;
-      color: #fff;
-    }
-    .contact-left p {
-      font-size: 1.1rem;
-      color: #bfb2a8;
-      max-width: 360px;
-    }
-    .contact-right {
-      text-align: right;
-    }
-    .contact-right .email {
-      font-size: 2rem;
-      font-weight: 300;
-      color: #fff;
-      text-decoration: none;
-      border-bottom: 1px solid #7f7168;
-      padding-bottom: 0.2rem;
-    }
-    .contact-right .email:hover {
-      border-color: #fff;
-    }
-    .contact-details {
-      margin-top: 1.8rem;
-      font-size: 0.9rem;
-      color: #b1a39a;
-    }
-    .contact-details a {
-      color: #f4efea;
-      text-decoration: none;
-      border-bottom: 1px solid #5f554f;
-    }
+.nav-links a:hover{
+opacity:.55;
+}
 
-    /* -------------------- FOOTER -------------------- */
-    footer {
-      padding: 2.5rem 5% 2rem;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1rem;
-      font-size: 0.85rem;
-      color: #8c8077;
-      border-top: 1px solid #e7ded7;
-    }
+/* HERO */
 
-    /* responsive tweaks */
-    @media (max-width: 600px) {
-      header { flex-direction: column; align-items: flex-start; }
-      .nav-links { gap: 1.5rem; }
-      .stats { flex-wrap: wrap; gap: 1.5rem; }
-    }
-  </style>
+.hero{
+padding:5rem 5% 6rem;
+background-color:#f4efea;
+margin-bottom:2rem;
+}
+
+.hero-content{
+max-width:1000px;
+margin:0 auto;
+}
+
+.hero h1{
+font-size:clamp(2.8rem,8vw,5.5rem);
+font-weight:400;
+line-height:1.0;
+letter-spacing:-0.03em;
+margin-bottom:1.8rem;
+color:#24201c;
+}
+
+.hero h1 em{
+font-style:normal;
+color:#a28f83;
+font-weight:300;
+border-bottom:2px solid #cebcb0;
+}
+
+.hero p{
+font-size:1.3rem;
+color:#4b413b;
+max-width:650px;
+font-weight:320;
+}
+
+/* WEDDINGS GRID */
+
+.portfolio-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:1.8rem;
+margin:4rem 0 5rem;
+}
+
+.portfolio-item{
+background:#f0e9e3;
+aspect-ratio:4/5;
+width:100%;
+transition:all .2s ease;
+position:relative;
+overflow:hidden;
+}
+
+.portfolio-item:hover{
+transform:scale(.98);
+opacity:.9;
+}
+
+/* ABOUT */
+
+.about-section{
+display:flex;
+flex-wrap:wrap;
+gap:4rem;
+margin:6rem 0;
+align-items:center;
+}
+
+.about-image{
+flex:1 1 280px;
+aspect-ratio:5/6;
+width:100%;
+}
+
+.about-content{
+flex:2 1 400px;
+}
+
+.about-content h2{
+font-size:2.8rem;
+font-weight:380;
+line-height:1.1;
+margin-bottom:1.5rem;
+max-width:600px;
+}
+
+.about-content p{
+font-size:1.15rem;
+color:#4f453e;
+max-width:500px;
+margin-bottom:2rem;
+}
+
+.stats{
+display:flex;
+gap:3rem;
+margin-top:2rem;
+}
+
+.stat-item{
+font-size:2rem;
+font-weight:350;
+line-height:1;
+}
+
+.stat-item span{
+display:block;
+font-size:.8rem;
+letter-spacing:1.5px;
+text-transform:uppercase;
+color:#897b71;
+margin-top:.5rem;
+}
+
+/* CONTACT */
+
+.contact-section{
+background:#1e1e1e;
+color:#f4efea;
+padding:5rem 5%;
+margin:5rem 0 0;
+}
+
+.contact-flex{
+display:flex;
+flex-wrap:wrap;
+justify-content:space-between;
+align-items:flex-end;
+gap:3rem;
+}
+
+.contact-left h3{
+font-size:2.2rem;
+font-weight:360;
+margin-bottom:.8rem;
+color:#fff;
+}
+
+.contact-left p{
+font-size:1.1rem;
+color:#bfb2a8;
+max-width:360px;
+}
+
+.contact-right{
+text-align:right;
+}
+
+.contact-right .email{
+font-size:2rem;
+font-weight:300;
+color:#fff;
+text-decoration:none;
+border-bottom:1px solid #7f7168;
+padding-bottom:.2rem;
+}
+
+.contact-right .email:hover{
+border-color:#fff;
+}
+
+.contact-details{
+margin-top:1.8rem;
+font-size:.9rem;
+color:#b1a39a;
+}
+
+/* FOOTER */
+
+footer{
+padding:2.5rem 5% 2rem;
+display:flex;
+justify-content:space-between;
+flex-wrap:wrap;
+gap:1rem;
+font-size:.85rem;
+color:#8c8077;
+border-top:1px solid #e7ded7;
+}
+
+</style>
 </head>
+
 <body>
 
-<!-- HEADER – clean, minimal navigation -->
 <header>
-  <a href="#" class="logo">lumen <span>&</span> coe</a>
-  <div class="nav-links">
-    <a href="#work">portfolio</a>
-    <a href="#about">about</a>
-    <a href="events.html">events</a>
-    <a href="#contact">contact</a>
-  </div>
+<a href="#" class="logo">lumen <span>&</span> coe</a>
+
+<div class="nav-links">
+<a href="#weddings">weddings</a>
+<a href="#about">about</a>
+<a href="events.html">events</a>
+<a href="#contact">contact</a>
+</div>
+
 </header>
 
-<!-- HERO – modern, text-focused, no fake image -->
+
 <section class="hero">
-  <div class="hero-content">
-    <h1>photography that <em>feels</em> like your day</h1>
-    <p>documentary‑inspired, radically present — for couples who value authenticity over poses.</p>
-  </div>
+
+<div class="hero-content">
+
+<h1>photography that <em>feels</em> like your day</h1>
+
+<p>documentary-inspired, radically present — for couples who value authenticity over poses.</p>
+
+</div>
+
 </section>
 
-<!-- PORTFOLIO GRID – replace color blocks with your images -->
-<div class="container" id="work">
-  <div class="section-title">recent work</div>
-  <div class="portfolio-grid">
-    <!-- replace background-color with your image URLs -->
-    <div class="portfolio-item item-1"
-     style="background-image: url('images/5.jpg'); background-size: cover; background-position: center;">
-    </div>
-    <div class="portfolio-item item-2" style="background-image: url('images/3.jpg'); background-size: cover; background-position: center;">
-    </div>
-    <div class="portfolio-item item-3" style="background-image: url('images/4.jpg'); background-size: cover; background-position: center;">
-    </div>
-    <div class="portfolio-item item-4" style="background-image: url('images/1.jpg'); background-size: cover; background-position: center;">
-    </div>
-    <div class="portfolio-item item-5" style="background-image: url('images/6.jpg'); background-size: cover; background-position: center;">
-    </div>
-    <div class="portfolio-item item-6" style="background-image: url('images/2.jpg'); background-size: cover; background-position: center;">
-    </div>
-    <div class="portfolio-item item-7" style="background-image: url('images/8.jpg'); background-size: cover; background-position: center;">
-    </div>
-    <div class="portfolio-item item-8" style="background-image: url('images/9.jpg'); background-size: cover; background-position: center;">
-    </div>
-    <div class="portfolio-item item-9" style="background-image: url('images/10.jpg'); background-size: cover; background-position: center;">
-    </div>
-  </div>
+
+<!-- WEDDINGS SECTION -->
+
+<div class="container" id="weddings">
+
+<div class="section-title">weddings</div>
+
+<div class="portfolio-grid">
+
+<div class="portfolio-item" style="background-image:url('images/5.jpg');background-size:cover;background-position:center;"></div>
+
+<div class="portfolio-item" style="background-image:url('images/3.jpg');background-size:cover;background-position:center;"></div>
+
+<div class="portfolio-item" style="background-image:url('images/4.jpg');background-size:cover;background-position:center;"></div>
+
+<div class="portfolio-item" style="background-image:url('images/1.jpg');background-size:cover;background-position:center;"></div>
+
+<div class="portfolio-item" style="background-image:url('images/6.jpg');background-size:cover;background-position:center;"></div>
+
+<div class="portfolio-item" style="background-image:url('images/2.jpg');background-size:cover;background-position:center;"></div>
+
+<div class="portfolio-item" style="background-image:url('images/8.jpg');background-size:cover;background-position:center;"></div>
+
+<div class="portfolio-item" style="background-image:url('images/9.jpg');background-size:cover;background-position:center;"></div>
+
+<div class="portfolio-item" style="background-image:url('images/10.jpg');background-size:cover;background-position:center;"></div>
+
+</div>
+
+</div>
 
 
-<!-- ABOUT + STATS (real business content) -->
 <div class="container" id="about">
-  <div class="about-section">
-    <!-- replace with your photo: remove background color and add background-image -->
-    <!-- <div class="about-image" style="background: #cfc1b7;" title="your portrait here"></div> -->
-    <div class="about-image" style="background-image: url('images/irfan&leo.jpg'); background-size: cover; background-position: center;" title="your portrait here"></div>
-    <div class="about-content">
-      <div class="section-title">about</div>
-      <h2>i’mmm elena — <br>photographer, quiet observer.</h2>
-      <p>eleven years documenting weddings across the world. my approach is simple: no interference, just an eye for light and the space between two people. based in new york, always traveling.</p>
-      <div class="stats">
-        <div class="stat-item">200+<span>weddings</span></div>
-        <div class="stat-item">11<span>years</span></div>
-        <div class="stat-item">∞<span>film frames</span></div>
-      </div>
-    </div>
-  </div>
+
+<div class="about-section">
+
+<div class="about-image" style="background-image:url('images/irfan&leo.jpg');background-size:cover;background-position:center;"></div>
+
+<div class="about-content">
+
+<div class="section-title">about</div>
+
+<h2>i’m elena — <br>photographer, quiet observer.</h2>
+
+<p>eleven years documenting weddings across the world. my approach is simple: no interference, just an eye for light and the space between two people.</p>
+
+<div class="stats">
+
+<div class="stat-item">200+<span>weddings</span></div>
+
+<div class="stat-item">11<span>years</span></div>
+
+<div class="stat-item">∞<span>film frames</span></div>
+
+</div>
+
+</div>
+
+</div>
+
 </div>
 
 
-<!-- CONTACT – dark section to stand out -->
 <div class="contact-section" id="contact">
-  <div class="container" style="padding:0;">
-    <div class="contact-flex">
-      <div class="contact-left">
-        <h3>let’s work together.</h3>
-        <p>i’d love to hear about your wedding — reach out and let’s create something honest.</p>
-      </div>
-      <div class="contact-right">
-        <a href="mailto:hello@lumencoe.com" class="email">hello@lumencoe.com</a>
-        <div class="contact-details">
-          +1 (212) 555 9302 <br>
-          <a href="#">@lumen.coe</a> · nyc / anywhere
-        </div>
-      </div>
-    </div>
-  </div>
+
+<div class="container" style="padding:0;">
+
+<div class="contact-flex">
+
+<div class="contact-left">
+
+<h3>let’s work together.</h3>
+
+<p>i’d love to hear about your wedding — reach out and let’s create something honest.</p>
+
 </div>
 
-<!-- FOOTER – simple, copy-paste ready -->
+<div class="contact-right">
+
+<a href="mailto:hello@lumencoe.com" class="email">hello@lumencoe.com</a>
+
+<div class="contact-details">
+
++1 (212) 555 9302<br>
+
+<a href="#">@lumen.coe</a> · nyc / anywhere
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
 <footer>
-  <span>© lumen + coe · wedding photography</span>
-  <span>all images © elena quinn · site: replace placeholders with your work</span>
+
+<span>© lumen + coe · wedding photography</span>
+
+<span>all images © elena quinn · site: replace placeholders with your work</span>
+
 </footer>
 
-<!-- tiny smooth scroll script (optional, just for ux) -->
+
 <script>
-  (function() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        const target = document.querySelector(targetId);
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: 'smooth' });
-        }
-      });
-    });
-  })();
+
+(function(){
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+
+anchor.addEventListener('click',function(e){
+
+const targetId=this.getAttribute('href');
+
+if(targetId==='#') return;
+
+const target=document.querySelector(targetId);
+
+if(target){
+
+e.preventDefault();
+
+target.scrollIntoView({behavior:'smooth'});
+
+}
+
+});
+
+});
+
+})();
+
 </script>
 
 </body>
+
 </html>
