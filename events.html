@@ -5,14 +5,58 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Events | lumen + coe</title>
 
-<!-- <link rel="stylesheet" href="style.css"> -->
-
 <style>
+
 body{
   font-family: Inter, system-ui, sans-serif;
   background:#faf8f6;
   color:#1e1e1e;
 }
+
+/* MATCH HOMEPAGE HEADER STYLE */
+header{
+  padding:2rem 5%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:1.5rem;
+  border-bottom:1px solid #e9e1da;
+}
+
+.logo{
+  font-size:1.5rem;
+  font-weight:450;
+  letter-spacing:-0.02em;
+  text-decoration:none;
+  color:#1e1e1e;
+}
+
+.logo span{
+  font-weight:250;
+  color:#a28f83;
+}
+
+.nav-links{
+  display:flex;
+  gap:2.5rem;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:#1e1e1e;
+  font-size:0.9rem;
+  font-weight:450;
+  text-transform:uppercase;
+  letter-spacing:1.2px;
+  transition:opacity .2s;
+}
+
+.nav-links a:hover{
+  opacity:0.55;
+}
+
+/* PAGE CONTENT */
 
 .container{
   max-width:1400px;
@@ -33,35 +77,19 @@ body{
   background-position:center;
 }
 
-header{
-  padding:2rem 5%;
-  border-bottom:1px solid #e9e1da;
-}
-
-.nav-links{
-  display:flex;
-  gap:2rem;
-}
-
-.nav-links a{
-  text-decoration:none;
-  color:#1e1e1e;
-  text-transform:uppercase;
-  font-size:.9rem;
-}
 </style>
 </head>
 
 <body>
 
 <header>
-<div class="nav-links">
-<a href="index.html">home</a>
-<a href="index.html#work">portfolio</a>
-<a href="index.html#about">about</a>
-<a href="events.html">events</a>
-<a href="index.html#contact">contact</a>
-</div>
+  <a href="index.html" class="logo">lumen <span>&</span> coe</a>
+  <div class="nav-links">
+    <a href="index.html#work">portfolio</a>
+    <a href="index.html#about">about</a>
+    <a href="events.html">events</a>
+    <a href="index.html#contact">contact</a>
+  </div>
 </header>
 
 <div class="container">
