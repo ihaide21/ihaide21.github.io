@@ -3,9 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Elena Warren · modern photography</title>
+  <title>lumen + coe | wedding photography</title>
+  <!-- 
+    MODERN WEDDING PHOTOGRAPHY BUSINESS PAGE
+    — minimalist, high-end, ready for your images
+    — fully responsive, semantic, and easy to customize
+  -->
   <style>
-    /* ----- MODERN RESET & BASE ----- */
+    /* -------------------- RESET & VARIABLES -------------------- */
     * {
       margin: 0;
       padding: 0;
@@ -13,400 +18,399 @@
     }
 
     body {
-      font-family: 'Inter', 'Helvetica Neue', sans-serif;
-      background: #fcfcfc;   /* soft white with a hint of warmth */
+      background-color: #faf8f6;   /* soft linen */
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
       color: #1e1e1e;
       line-height: 1.5;
       font-weight: 350;
+      -webkit-font-smoothing: antialiased;
     }
 
-    /* modern headings: slightly tighter, all-caps not necessary */
+    /* -------------------- TYPOGRAPHY -------------------- */
     h1, h2, h3 {
-      font-weight: 450;
-      letter-spacing: -0.01em;
+      font-weight: 400;
+      letter-spacing: -0.02em;
     }
 
+    .section-title {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-weight: 500;
+      color: #8f8177;
+      margin-bottom: 1.5rem;
+    }
+
+    /* -------------------- UTILITY -------------------- */
     .container {
-      max-width: 1300px;
+      max-width: 1400px;
       margin: 0 auto;
-      padding: 0 2rem;
+      padding: 0 5%;
     }
 
-    /* ----- HEADER with top-right navigation (modern minimal) ----- */
+    /* -------------------- HEADER & NAV -------------------- */
     header {
-      padding: 2rem 2rem 1.2rem;
+      padding: 2rem 5%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: #fcfcfc;
-      border-bottom: 1px solid #eaeaea;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      border-bottom: 1px solid #e9e1da;
     }
 
-    .logo a {
-      font-size: 1.4rem;
+    .logo {
+      font-size: 1.5rem;
       font-weight: 450;
+      letter-spacing: -0.02em;
       text-decoration: none;
       color: #1e1e1e;
-      letter-spacing: -0.02em;
+    }
+    .logo span {
+      font-weight: 250;
+      color: #a28f83;
     }
 
-    nav ul {
+    .nav-links {
       display: flex;
       gap: 2.5rem;
-      list-style: none;
     }
-
-    nav a {
+    .nav-links a {
       text-decoration: none;
-      color: #2c2c2c;
-      font-size: 0.95rem;
-      font-weight: 400;
-      transition: color 0.2s;
-    }
-
-    nav a:hover, nav a.active {
-      color: #a67c5b;   /* warm terracotta accent */
-    }
-
-    /* ----- PAGE CONTENT (loaded via JS) ----- */
-    #dynamic-content {
-      min-height: 60vh;
-      padding: 3rem 0 4rem;
-    }
-
-    /* ----- modern page styles ----- */
-    .page-title {
-      font-size: 2.8rem;
+      color: #1e1e1e;
+      font-size: 0.9rem;
       font-weight: 450;
-      margin-bottom: 1.5rem;
-      line-height: 1.1;
-      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      transition: opacity 0.2s;
+    }
+    .nav-links a:hover {
+      opacity: 0.55;
     }
 
-    .hero-image {
-      width: 100%;
-      height: 460px;
-      background-color: #eae2da;
-      background-size: cover;
-      background-position: center;
-      margin: 2rem 0 3rem;
+    /* -------------------- HERO -------------------- */
+    .hero {
+      padding: 5rem 5% 6rem;
+      background-color: #f4efea;
+      margin-bottom: 2rem;
     }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      margin: 2.5rem 0;
+    .hero-content {
+      max-width: 1000px;
+      margin: 0 auto;
     }
-
-    @media (max-width: 700px) {
-      .grid-2 { grid-template-columns: 1fr; }
+    .hero h1 {
+      font-size: clamp(2.8rem, 8vw, 5.5rem);
+      font-weight: 400;
+      line-height: 1.0;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.8rem;
+      color: #24201c;
     }
-
-    .text-large {
+    .hero h1 em {
+      font-style: normal;
+      color: #a28f83;
+      font-weight: 300;
+      border-bottom: 2px solid #cebcb0;
+    }
+    .hero p {
       font-size: 1.3rem;
-      color: #4a4a4a;
-      margin-bottom: 1.5rem;
+      color: #4b413b;
+      max-width: 650px;
+      font-weight: 320;
     }
 
-    /* portfolio grid (clean, spacious) */
+    /* -------------------- PORTFOLIO GRID -------------------- */
     .portfolio-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 2rem;
-      margin: 2.5rem 0;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.8rem;
+      margin: 4rem 0 5rem;
     }
-
-    .card {
-      background: white;
-      border-radius: 0;
-      overflow: hidden;
-      transition: transform 0.2s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-    }
-
-    .card-img {
+    .portfolio-item {
+      background: #f0e9e3;  /* placeholder until you add images */
+      aspect-ratio: 4 / 5;
       width: 100%;
-      height: 320px;
-      background-color: #f0ebe6;
-      background-size: cover;
-      background-position: center;
+      transition: all 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    /* this is where YOU will add background-image later */
+    .portfolio-item img-placeholder {
+      display: none; 
     }
 
-    .card-content {
-      padding: 1rem 0 0.5rem;
+    /* tonal variations for visual interest (remove when you add photos) */
+    .item-1 { background-color: #d9cec5; }
+    .item-2 { background-color: #cbbeb4; }
+    .item-3 { background-color: #beae9f; }
+    .item-4 { background-color: #d3c5ba; }
+    .item-5 { background-color: #c2b2a5; }
+    .item-6 { background-color: #b09e8f; }
+
+    .portfolio-item:hover {
+      transform: scale(0.98);
+      opacity: 0.9;
     }
 
-    .card-category {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: #a67c5b;
-      margin-bottom: 0.2rem;
+    .portfolio-caption {
+      margin-top: 0.8rem;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9rem;
+      color: #4c423c;
+      letter-spacing: 0.3px;
+      border-top: 1px solid #e1d6ce;
+      padding-top: 0.6rem;
+    }
+    .portfolio-caption .date {
+      color: #95877e;
     }
 
-    .card-title {
-      font-weight: 450;
-      font-size: 1.1rem;
-    }
-
-    /* about page specific */
-    .about-wrap {
+    /* -------------------- ABOUT + STATS -------------------- */
+    .about-section {
       display: flex;
       flex-wrap: wrap;
       gap: 4rem;
+      margin: 6rem 0;
       align-items: center;
-      margin: 3rem 0;
+    }
+    .about-image {
+      flex: 1 1 280px;
+      background-color: #cfc1b7;  /* replace with your photo */
+      aspect-ratio: 5 / 6;
+      width: 100%;
+      border-radius: 0; /* keep it sharp */
+    }
+    .about-content {
+      flex: 2 1 400px;
+    }
+    .about-content h2 {
+      font-size: 2.8rem;
+      font-weight: 380;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      max-width: 600px;
+    }
+    .about-content p {
+      font-size: 1.15rem;
+      color: #4f453e;
+      max-width: 500px;
+      margin-bottom: 2rem;
+    }
+    .stats {
+      display: flex;
+      gap: 3rem;
+      margin-top: 2rem;
+    }
+    .stat-item {
+      font-size: 2rem;
+      font-weight: 350;
+      line-height: 1;
+    }
+    .stat-item span {
+      display: block;
+      font-size: 0.8rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #897b71;
+      margin-top: 0.5rem;
     }
 
-    .portrait-modern {
-      width: 300px;
-      height: 300px;
-      background: #dcd2c9;
-      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%23b7a287"><circle cx="50" cy="40" r="20"/><circle cx="50" cy="90" r="28"/></svg>');
-      background-size: cover;
-      background-position: center 30%;
-      border-radius: 2px;
-    }
-
-    .contact-modern {
-      background: #ffffff;
-      padding: 2.5rem;
-      border: 1px solid #efefef;
-      display: inline-block;
-      margin: 2rem 0;
-    }
-
-    .contact-modern p {
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
-    }
-
-    .contact-modern a {
-      color: #1e1e1e;
-      text-decoration: none;
-      border-bottom: 1px solid #ccc;
-    }
-
-    .contact-modern a:hover {
-      border-bottom-color: #a67c5b;
-    }
-
-    /* home page specific */
-    .home-intro {
-      padding: 3rem 0 2rem;
-    }
-
-    .home-grid {
+    /* -------------------- SERVICES / OFFERINGS -------------------- */
+    .services-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 2rem;
-      margin: 4rem 0;
+      margin: 4rem 0 5rem;
     }
-
+    .service-card {
+      border-top: 1px solid #dad0c8;
+      padding-top: 1.8rem;
+    }
+    .service-card h3 {
+      font-size: 1.5rem;
+      font-weight: 380;
+      margin-bottom: 0.8rem;
+    }
+    .service-card p {
+      color: #645a53;
+      font-size: 1rem;
+    }
     @media (max-width: 700px) {
-      .home-grid { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr; }
     }
 
-    .home-item {
-      height: 400px;
-      background: #ece3db;
-      background-size: cover;
-      background-position: center;
+    /* -------------------- CONTACT & INQUIRY -------------------- */
+    .contact-section {
+      background-color: #1e1e1e;
+      color: #f4efea;
+      padding: 5rem 5%;
+      margin: 5rem 0 0;
+    }
+    .contact-flex {
       display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
       align-items: flex-end;
-      padding: 1.5rem;
-      color: white;
-      text-shadow: 0 2px 5px rgba(0,0,0,0.2);
-      font-size: 1.8rem;
-      font-weight: 400;
+      gap: 3rem;
+    }
+    .contact-left h3 {
+      font-size: 2.2rem;
+      font-weight: 360;
+      margin-bottom: 0.8rem;
+      color: #fff;
+    }
+    .contact-left p {
+      font-size: 1.1rem;
+      color: #bfb2a8;
+      max-width: 360px;
+    }
+    .contact-right {
+      text-align: right;
+    }
+    .contact-right .email {
+      font-size: 2rem;
+      font-weight: 300;
+      color: #fff;
+      text-decoration: none;
+      border-bottom: 1px solid #7f7168;
+      padding-bottom: 0.2rem;
+    }
+    .contact-right .email:hover {
+      border-color: #fff;
+    }
+    .contact-details {
+      margin-top: 1.8rem;
+      font-size: 0.9rem;
+      color: #b1a39a;
+    }
+    .contact-details a {
+      color: #f4efea;
+      text-decoration: none;
+      border-bottom: 1px solid #5f554f;
     }
 
+    /* -------------------- FOOTER -------------------- */
     footer {
-      padding: 3rem 2rem;
-      text-align: center;
-      color: #8f8f8f;
-      border-top: 1px solid #eaeaea;
-      background: #fcfcfc;
+      padding: 2.5rem 5% 2rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.85rem;
+      color: #8c8077;
+      border-top: 1px solid #e7ded7;
     }
 
-    /* active nav style */
-    nav a.active {
-      color: #a67c5b;
+    /* responsive tweaks */
+    @media (max-width: 600px) {
+      header { flex-direction: column; align-items: flex-start; }
+      .nav-links { gap: 1.5rem; }
+      .stats { flex-wrap: wrap; gap: 1.5rem; }
     }
   </style>
 </head>
 <body>
 
-<!-- ========== HEADER (same on every page) ========== -->
+<!-- HEADER – clean, minimal navigation -->
 <header>
-  <div class="logo"><a href="?page=home" id="logo-link">Elena Warren</a></div>
-  <nav>
-    <ul>
-      <li><a href="?page=home" class="nav-link" data-page="home">Home</a></li>
-      <li><a href="?page=wedding" class="nav-link" data-page="wedding">Wedding</a></li>
-      <li><a href="?page=business" class="nav-link" data-page="business">Business</a></li>
-      <li><a href="?page=about" class="nav-link" data-page="about">About</a></li>
-      <li><a href="?page=contact" class="nav-link" data-page="contact">Contact</a></li>
-    </ul>
-  </nav>
+  <a href="#" class="logo">lumen <span>&</span> coe</a>
+  <div class="nav-links">
+    <a href="#work">portfolio</a>
+    <a href="#about">about</a>
+    <a href="#events">events</a>
+    <a href="#contact">contact</a>
+  </div>
 </header>
 
-<!-- ===== DYNAMIC CONTENT AREA (pages loaded here) ===== -->
-<main id="dynamic-content" class="container">
-  <!-- initial placeholder — will be replaced by JS with home page -->
-  <div style="text-align: center; padding: 4rem 0;">loading ...</div>
-</main>
+<!-- HERO – modern, text-focused, no fake image -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>photography that <em>feels</em> like your day</h1>
+    <p>documentary‑inspired, radically present — for couples who value authenticity over poses.</p>
+  </div>
+</section>
 
+<!-- PORTFOLIO GRID – replace color blocks with your images -->
+<div class="container" id="work">
+  <div class="section-title">recent work</div>
+  <div class="portfolio-grid">
+    <!-- replace background-color with your image URLs -->
+    <div class="portfolio-item item-1"
+     style="background-image: url('images/5.jpg'); background-size: cover; background-position: center;">
+    </div>
+    <div class="portfolio-item item-2" style="background-image: url('images/3.jpg'); background-size: cover; background-position: center;">
+    </div>
+    <div class="portfolio-item item-3" style="background-image: url('images/4.jpg'); background-size: cover; background-position: center;">
+    </div>
+    <div class="portfolio-item item-4" style="background-image: url('images/1.jpg'); background-size: cover; background-position: center;">
+    </div>
+    <div class="portfolio-item item-5" style="background-image: url('images/6.jpg'); background-size: cover; background-position: center;">
+    </div>
+    <div class="portfolio-item item-6" style="background-image: url('images/2.jpg'); background-size: cover; background-position: center;">
+    </div>
+  </div>
+
+
+<!-- ABOUT + STATS (real business content) -->
+<div class="container" id="about">
+  <div class="about-section">
+    <!-- replace with your photo: remove background color and add background-image -->
+    <!-- <div class="about-image" style="background: #cfc1b7;" title="your portrait here"></div> -->
+    <div class="about-image" style="background-image: url('images/irfan&leo.jpg'); background-size: cover; background-position: center;" title="your portrait here"></div>
+    <div class="about-content">
+      <div class="section-title">about</div>
+      <h2>i’m elena — <br>photographer, quiet observer.</h2>
+      <p>eleven years documenting weddings across the world. my approach is simple: no interference, just an eye for light and the space between two people. based in new york, always traveling.</p>
+      <div class="stats">
+        <div class="stat-item">200+<span>weddings</span></div>
+        <div class="stat-item">11<span>years</span></div>
+        <div class="stat-item">∞<span>film frames</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- CONTACT – dark section to stand out -->
+<div class="contact-section" id="contact">
+  <div class="container" style="padding:0;">
+    <div class="contact-flex">
+      <div class="contact-left">
+        <h3>let’s work together.</h3>
+        <p>i’d love to hear about your wedding — reach out and let’s create something honest.</p>
+      </div>
+      <div class="contact-right">
+        <a href="mailto:hello@lumencoe.com" class="email">hello@lumencoe.com</a>
+        <div class="contact-details">
+          +1 (212) 555 9302 <br>
+          <a href="#">@lumen.coe</a> · nyc / anywhere
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER – simple, copy-paste ready -->
 <footer>
-  <p>© Elena Warren photography — modern & timeless</p>
+  <span>© lumen + coe · wedding photography</span>
+  <span>all images © elena quinn · site: replace placeholders with your work</span>
 </footer>
 
+<!-- tiny smooth scroll script (optional, just for ux) -->
 <script>
   (function() {
-    // ----- PAGE DEFINITIONS (modern style, separate home + 4 pages) -----
-    const pages = {
-      // HOME page (unique)
-      home: `
-        <div class="home-intro">
-          <h1 class="page-title">Elena Warren <span style="font-weight:300; color:#7f7f7f;">photography</span></h1>
-          <div class="text-large" style="max-width:700px;">Documentary‑inspired imagery for weddings, brands and the in‑between.</div>
-        </div>
-        <div class="hero-image" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%25\' height=\'100%25\' viewBox=\'0 0 100 100\'><rect width=\'100\' height=\'100\' fill=\'%23d9cdc2\'/><circle cx=\'30\' cy=\'35\' r=\'12\' fill=\'%23b7a287\'/><circle cx=\'70\' cy=\'35\' r=\'12\' fill=\'%23b7a287\'/><path d=\'M20 70 Q50 96, 80 70\' stroke=\'%23948173\' stroke-width=\'5\' fill=\'none\'/></svg>');"></div>
-        <div class="home-grid">
-          <div class="home-item" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'><rect width=\'100\' height=\'100\' fill=\'%23b7a287\'/><circle cx=\'30\' cy=\'40\' r=\'12\' fill=\'%23e7d9cd\'/><circle cx=\'70\' cy=\'40\' r=\'12\' fill=\'%23e7d9cd\'/><path d=\'M20 70 Q50 96, 80 70\' stroke=\'%23ffffff\' stroke-width=\'4\' fill=\'none\'/></svg>');">Wedding</div>
-          <div class="home-item" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'><rect width=\'100\' height=\'100\' fill=\'%239f8b78\'/><circle cx=\'50\' cy=\'45\' r=\'20\' fill=\'%23e7d9cd\'/><rect x=\'35\' y=\'65\' width=\'30\' height=\'30\' fill=\'%23ffffff\' opacity=\'0.8\'/></svg>');">Headshots</div>
-          <div class="home-item" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'><rect width=\'100\' height=\'100\' fill=\'%23ae9b8b\'/><circle cx=\'50\' cy=\'40\' r=\'28\' fill=\'%23dacfc7\'/></svg>');">Film</div>
-        </div>
-        <p style="text-align:center; color:#6f6f6f; margin: 3rem 0;">Based in the pacific northwest · available worldwide</p>
-      `,
-
-      // WEDDING page
-      wedding: `
-        <h1 class="page-title">Wedding</h1>
-        <div class="hero-image" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%25\' height=\'100%25\' viewBox=\'0 0 100 100\'><rect width=\'100\' height=\'100\' fill=\'%23e1d5cb\'/><circle cx=\'35\' cy=\'40\' r=\'14\' fill=\'%23b7a287\'/><circle cx=\'65\' cy=\'40\' r=\'14\' fill=\'%23b7a287\'/><path d=\'M25 70 Q50 98, 75 70\' stroke=\'%23948173\' stroke-width=\'5\' fill=\'none\'/></svg>');"></div>
-        <div class="grid-2">
-          <div><p class="text-large">Intimate, candid, and timeless. I document the real moments between laughter and tears.</p></div>
-          <div><p>From elopements in the redwoods to lavish vineyard receptions, my approach is unobtrusive. I want you to remember the feeling of the day, not the camera.</p></div>
-        </div>
-        <div class="portfolio-grid">
-          <div class="card"><div class="card-img" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'><rect width=\'100\' height=\'100\' fill=\'%23ded2c7\'/><circle cx=\'40\' cy=\'45\' r=\'14\' fill=\'%23b7a287\'/><circle cx=\'60\' cy=\'45\' r=\'14\' fill=\'%23b7a287\'/><path d=\'M30 75 Q50 94, 70 75\' stroke=\'%23948173\' stroke-width=\'4\' fill=\'none\'/></svg>');"></div><div class="card-content"><span class="card-category">wedding</span><div class="card-title">Claire + David</div></div></div>
-          <div class="card"><div class="card-img" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'><rect width=\'100\' height=\'100\' fill=\'%23e7ddd4\'/><circle cx=\'30\' cy=\'45\' r=\'12\' fill=\'%23b7a287\'/><circle cx=\'70\' cy=\'45\' r=\'12\' fill=\'%23b7a287\'/><path d=\'M20 75 Q50 96, 80 75\' stroke=\'%23948173\' stroke-width=\'4\' fill=\'none\'/></svg>');"></div><div class="card-content"><span class="card-category">wedding</span><div class="card-title">Megan + Peter</div></div></div>
-          <div class="card"><div class="card-img" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'><rect width=\'100\' height=\'100\' fill=\'%23d7c9bc\'/><circle cx=\'45\' cy=\'40\' r=\'13\' fill=\'%239f8b78\'/><circle cx=\'55\' cy=\'40\' r=\'13\' fill=\'%239f8b78\'/><path d=\'M30 72 Q50 92, 70 72\' stroke=\'%23847464\' stroke-width=\'4\' fill=\'none\'/></svg>');"></div><div class="card-content"><span class="card-category">wedding</span><div class="card-title">Anna + William</div></div></div>
-        </div>
-        <p style="margin:2rem 0;">Investment begins at $4,800. All wedding collections include a second shooter and online gallery.</p>
-      `,
-
-      // BUSINESS page (headshots)
-      business: `
-        <h1 class="page-title">Business Headshots</h1>
-        <div class="hero-image" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%25\' height=\'100%25\' viewBox=\'0 0 100 100\'><rect width=\'100\' height=\'100\' fill=\'%23ded6cf\'/><circle cx=\'50\' cy=\'45\' r=\'22\' fill=\'%23b7a287\'/><rect x=\'35\' y=\'68\' width=\'30\' height=\'28\' fill=\'%239f8b78\'/></svg>');"></div>
-        <div class="grid-2">
-          <div><p class="text-large">Contemporary headshots for brands, LinkedIn, and executive presence.</p></div>
-          <div><p>Natural light or studio strobes — we create a look that feels like you. Quick turnaround, relaxed direction, and high‑res files with full printing rights.</p></div>
-        </div>
-        <div style="background:#f5f2f0; padding:2.5rem; margin:3rem 0;">
-          <p style="font-size:1.4rem; margin-bottom:0.5rem;">individual session $495</p>
-          <p style="color:#6f6f6f;">team packages · on‑location · custom branding</p>
-        </div>
-        <div class="portfolio-grid">
-          <div class="card"><div class="card-img" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'><rect width=\'100\' height=\'100\' fill=\'%23ddd3cb\'/><circle cx=\'50\' cy=\'45\' r=\'22\' fill=\'%23b7a287\'/><rect x=\'35\' y=\'68\' width=\'30\' height=\'28\' fill=\'%23907e6d\'/></svg>');"></div><div class="card-content"><span class="card-category">headshot</span><div class="card-title">Legal team</div></div></div>
-          <div class="card"><div class="card-img" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'><rect width=\'100\' height=\'100\' fill=\'%23e9e0d9\'/><circle cx=\'50\' cy=\'42\' r=\'20\' fill=\'%23b7a287\'/><rect x=\'35\' y=\'62\' width=\'30\' height=\'30\' fill=\'%23907e6d\'/></svg>');"></div><div class="card-content"><span class="card-category">headshot</span><div class="card-title">Creative director</div></div></div>
-          <div class="card"><div class="card-img" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'><rect width=\'100\' height=\'100\' fill=\'%23e3d9d1\'/><circle cx=\'50\' cy=\'45\' r=\'22\' fill=\'%239f8b78\'/><rect x=\'35\' y=\'68\' width=\'30\' height=\'28\' fill=\'%23847464\'/></svg>');"></div><div class="card-content"><span class="card-category">headshot</span><div class="card-title">Startup founder</div></div></div>
-        </div>
-      `,
-
-      // ABOUT page
-      about: `
-        <h1 class="page-title">About Elena</h1>
-        <div class="about-wrap">
-          <div class="portrait-modern"></div>
-          <div style="flex:1;">
-            <p class="text-large">I photograph people as they are — not as they think they should be.</p>
-            <p style="margin:1.5rem 0;">Ten years ago I picked up a camera to shoot punk shows in Seattle. That documentary energy stayed with me. Now I work with couples and entrepreneurs to capture quiet confidence, real laughter, and the in‑between moments that feel like home.</p>
-            <p>I split my time between the Olympic peninsula and a small studio in Fremont. When I'm not shooting, I'm probably reading sci‑fi or hunting for the perfect cup of coffee.</p>
-            <p style="margin-top:2rem;">— Elena</p>
-          </div>
-        </div>
-      `,
-
-      // CONTACT page
-      contact: `
-        <h1 class="page-title">Contact</h1>
-        <div class="hero-image" style="height:300px; background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%25\' height=\'100%25\' viewBox=\'0 0 100 100\'><rect width=\'100\' height=\'100\' fill=\'%23ddd0c4\'/><path d=\'M20,50 L80,50\' stroke=\'%23a67c5b\' stroke-width=\'2\' /><circle cx=\'30\' cy=\'50\' r=\'6\' fill=\'%23a67c5b\'/><circle cx=\'70\' cy=\'50\' r=\'6\' fill=\'%23a67c5b\'/></svg>');"></div>
-        <div class="contact-modern">
-          <p>✶ <a href="mailto:hello@elenawarren.com">hello@elenawarren.com</a></p>
-          <p>✶ +1 (206) 555 9420</p>
-          <p>✶ instagram.com/elena.warren</p>
-          <p style="margin-top:2rem;">Seattle · available for travel</p>
-        </div>
-        <p style="font-size:1.2rem; max-width:600px;">Wedding inquiries, headshot bookings, or just to say hello — I’d love to hear from you. Response within 24 hours.</p>
-      `
-    };
-
-    // get page from URL param 'page'
-    function getPageFromURL() {
-      const params = new URLSearchParams(window.location.search);
-      return params.get('page'); // 'home', 'wedding', 'business', 'about', 'contact'
-    }
-
-    // load page and update active class
-    function loadPage(pageId) {
-      const valid = ['home', 'wedding', 'business', 'about', 'contact'];
-      if (!valid.includes(pageId)) pageId = 'home'; // default to home
-
-      const contentDiv = document.getElementById('dynamic-content');
-      if (contentDiv) {
-        contentDiv.innerHTML = pages[pageId] || '<p>Page not found</p>';
-      }
-
-      // update active nav class
-      document.querySelectorAll('.nav-link').forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('data-page') === pageId) {
-          link.classList.add('active');
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        const target = document.querySelector(targetId);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth' });
         }
       });
-
-      // update URL without reload
-      const url = new URL(window.location);
-      url.searchParams.set('page', pageId);
-      window.history.replaceState({}, '', url);
-    }
-
-    // click handlers
-    function init() {
-      const initialPage = getPageFromURL() || 'home';
-      loadPage(initialPage);
-
-      document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', (e) => {
-          e.preventDefault();
-          const page = link.getAttribute('data-page');
-          loadPage(page);
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-      });
-
-      // also logo click should go to home
-      const logoLink = document.getElementById('logo-link');
-      if (logoLink) {
-        logoLink.addEventListener('click', (e) => {
-          e.preventDefault();
-          loadPage('home');
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-      }
-    }
-
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', init);
-    } else {
-      init();
-    }
+    });
   })();
 </script>
 
