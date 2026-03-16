@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Events | lumen + coe</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+body{
+  font-family: Inter, system-ui, sans-serif;
+  background:#faf8f6;
+  color:#1e1e1e;
+}
+
+.container{
+  max-width:1400px;
+  margin:auto;
+  padding:5%;
+}
+
+.events-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:2rem;
+}
+
+.event-item{
+  aspect-ratio:4/5;
+  background:#ddd;
+  background-size:cover;
+  background-position:center;
+}
+
+header{
+  padding:2rem 5%;
+  border-bottom:1px solid #e9e1da;
+}
+
+.nav-links{
+  display:flex;
+  gap:2rem;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:#1e1e1e;
+  text-transform:uppercase;
+  font-size:.9rem;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="nav-links">
+<a href="index.html">home</a>
+<a href="index.html#work">portfolio</a>
+<a href="index.html#about">about</a>
+<a href="events.html">events</a>
+<a href="index.html#contact">contact</a>
+</div>
+</header>
+
+<div class="container">
+
+<h1 style="margin-bottom:3rem;">Events</h1>
+
+<div class="events-grid">
+
+<div class="event-item" style="background-image:url('images/event1.jpg');"></div>
+
+<div class="event-item" style="background-image:url('images/event2.jpg');"></div>
+
+<div class="event-item" style="background-image:url('images/event3.jpg');"></div>
+
+</div>
+
+</div>
+
+</body>
+</html>
