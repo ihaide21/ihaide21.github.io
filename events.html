@@ -65,16 +65,26 @@ header{
 }
 
 .events-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:2rem;
+display:grid;
+grid-template-columns:repeat(3, 1fr);
+gap:1.8rem;
+margin:4rem 0 5rem;
 }
 
 .event-item{
+  background:#f0e9e3;
   aspect-ratio:4/5;
-  background:#ddd;
+  width:100%;
+  transition:all .2s ease;
+  position:relative;
+  overflow:hidden;
   background-size:cover;
   background-position:center;
+}
+
+.event-item:hover{
+  transform:scale(.98);
+  opacity:.9;
 }
 
 </style>
@@ -98,12 +108,21 @@ header{
 
 <div class="events-grid">
 
-<div class="event-item" style="background-image:url('images/event1.jpg');"></div>
-
-<div class="event-item" style="background-image:url('images/event2.jpg');"></div>
-
-<div class="event-item" style="background-image:url('images/event3.jpg');"></div>
-
+<div class="event-item" style="background-image:url('images/13.jpeg');"></div>
+<div class="event-item" style="background-image:url('images/23.jpeg');"></div>
+<div class="event-item" style="background-image:url('images/17.jpeg');"></div>
+<div class="event-item" style="background-image:url('images/20.jpeg');"></div>
+<div class="event-item" style="background-image:url('images/15.jpeg');"></div>
+<div class="event-item" style="background-image:url('images/24.jpeg');"></div>
+<div class="event-item" style="background-image:url('images/16.jpeg');"></div>
+<div class="event-item" style="background-image:url('images/11.jpeg');"></div>
+<div class="event-item" style="background-image:url('images/18.jpg');"></div>
+<div class="event-item" style="background-image:url('images/19.jpg');"></div>
+<div class="event-item" style="background-image:url('images/12.jpeg');"></div>
+<div class="event-item" style="background-image:url('images/21.jpeg');"></div>
+<div class="event-item" style="background-image:url('images/14.jpeg');"></div>
+<div class="event-item" style="background-image:url('images/22.jpeg');"></div>
+<div class="event-item" style="background-image:url('images/25.jpeg');"></div>
 </div>
 
 </div>
