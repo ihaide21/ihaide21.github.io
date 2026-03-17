@@ -13,7 +13,8 @@ body{
   color:#1e1e1e;
 }
 
-/* MATCH HOMEPAGE HEADER STYLE */
+/* HEADER */
+
 header{
   padding:2rem 5%;
   display:flex;
@@ -65,10 +66,10 @@ header{
 }
 
 .events-grid{
-display:grid;
-grid-template-columns:repeat(3, 1fr);
-gap:1.8rem;
-margin:4rem 0 5rem;
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:1.8rem;
+  margin:4rem 0 5rem;
 }
 
 .event-item{
@@ -80,11 +81,34 @@ margin:4rem 0 5rem;
   overflow:hidden;
   background-size:cover;
   background-position:center;
+  cursor:pointer;
 }
 
 .event-item:hover{
   transform:scale(.98);
   opacity:.9;
+}
+
+/* LIGHTBOX */
+
+.lightbox{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,.9);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:1000;
+  cursor:pointer;
+}
+
+.lightbox img{
+  max-width:90%;
+  max-height:90%;
+  box-shadow:0 10px 40px rgba(0,0,0,.5);
 }
 
 </style>
@@ -108,24 +132,58 @@ margin:4rem 0 5rem;
 
 <div class="events-grid">
 
+<div class="event-item" style="background-image:url('images/20.jpeg');"></div>
+<div class="event-item" style="background-image:url('images/17.jpeg');"></div> 
+<div class="event-item" style="background-image:url('images/21.jpeg');"></div>   
 <div class="event-item" style="background-image:url('images/13.jpeg');"></div>
 <div class="event-item" style="background-image:url('images/23.jpeg');"></div>
-<div class="event-item" style="background-image:url('images/17.jpeg');"></div>
-<div class="event-item" style="background-image:url('images/20.jpeg');"></div>
-<div class="event-item" style="background-image:url('images/15.jpeg');"></div>
+
+<!-- <div class="event-item" style="background-image:url('images/15.jpeg');"></div> -->
 <div class="event-item" style="background-image:url('images/24.jpeg');"></div>
 <div class="event-item" style="background-image:url('images/16.jpeg');"></div>
 <div class="event-item" style="background-image:url('images/11.jpeg');"></div>
 <div class="event-item" style="background-image:url('images/18.jpg');"></div>
 <div class="event-item" style="background-image:url('images/19.jpg');"></div>
 <div class="event-item" style="background-image:url('images/12.jpeg');"></div>
-<div class="event-item" style="background-image:url('images/21.jpeg');"></div>
+
 <div class="event-item" style="background-image:url('images/14.jpeg');"></div>
 <div class="event-item" style="background-image:url('images/22.jpeg');"></div>
 <div class="event-item" style="background-image:url('images/25.jpeg');"></div>
+
 </div>
 
 </div>
+
+<!-- LIGHTBOX -->
+
+<div class="lightbox" id="lightbox">
+<img id="lightbox-img" src="">
+</div>
+
+<script>
+
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+
+document.querySelectorAll(".event-item").forEach(item => {
+
+  item.addEventListener("click", () => {
+
+    const bg = item.style.backgroundImage;
+    const imgUrl = bg.slice(5, -2);
+
+    lightboxImg.src = imgUrl;
+    lightbox.style.display = "flex";
+
+  });
+
+});
+
+lightbox.addEventListener("click", () => {
+  lightbox.style.display = "none";
+});
+
+</script>
 
 </body>
 </html>
