@@ -165,8 +165,8 @@ aspect-ratio:5/6;
 width:100%;
 } */
 .about-image{
-  flex: 0 0 360px;   /* controls size */
-  width: 360px;      /* fixed width */
+  flex: 0 0 280px;   /* controls size */
+  width: 280px;      /* fixed width */
   aspect-ratio: 5 / 6;
 }
 
@@ -276,6 +276,51 @@ color:#8c8077;
 border-top:1px solid #e7ded7;
 }
 
+/* neww css code for pricing table untle sytle tag ends*/
+/* PRICING */
+
+.pricing-section{
+margin:6rem auto;
+max-width:1100px;
+}
+
+.pricing-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:2rem;
+margin-top:2.5rem;
+}
+
+.pricing-card{
+padding:2rem;
+border:1px solid #e7ded7;
+background:#fff;
+transition:all .2s ease;
+}
+
+.pricing-card:hover{
+transform:translateY(-4px);
+}
+
+.pricing-title{
+font-size:1.1rem;
+font-weight:500;
+margin-bottom:.6rem;
+}
+
+.pricing-desc{
+font-size:.95rem;
+color:#7a6f66;
+margin-bottom:1.2rem;
+}
+
+.pricing-price{
+font-size:1.4rem;
+font-weight:400;
+letter-spacing:-0.02em;
+}
+
+
 </style>
 </head>
 
@@ -303,8 +348,8 @@ border-top:1px solid #e7ded7;
 
 <!-- <p>Documentary-style photography for intimate weddings.</p> -->
 
-<p>Seattle based. Available for weddings, elopements, and events.</p>
-<p style="margin-top:1rem; color:#6f625a;"> Currently building my wedding portfolio - offering discounted or complimentary coverage for a limited number of weddings.</p>
+<p>Seattle based. Available for weddings, engagements, and events.</p>
+<p style="margin-top:1rem; color:#6f625a;"> Currently building my wedding and engagement portfolio - offering discounted or complimentary coverage for a limited number of weddings.</p>
 
 </div>
 
@@ -319,19 +364,12 @@ border-top:1px solid #e7ded7;
 
 <div class="portfolio-grid">
 
-<div class="portfolio-item" style="background-image:url('images/5.jpg');background-size:cover;background-position:center;"></div>
-<div class="portfolio-item" style="background-image:url('images/4.jpg');background-size:cover;background-position:center;"></div>
-
+<!-- <div class="portfolio-item" style="background-image:url('images/5.jpg');background-size:cover;background-position:center;"></div> -->
+<!-- <div class="portfolio-item" style="background-image:url('images/4.jpg');background-size:cover;background-position:center;"></div> -->
 <div class="portfolio-item" style="background-image:url('images/2.png');background-size:cover;background-position:center;"></div>
-
-<div class="portfolio-item" style="background-image:url('images/29.jpg');background-size:cover;background-position:center;"></div>
-<div class="portfolio-item" style="background-image:url('images/33.jpg');background-size:cover;background-position:center;"></div>
-
-<div class="portfolio-item" style="background-image:url('images/27.jpg');background-size:cover;background-position:center;"></div>
-
-
+<!-- <div class="portfolio-item" style="background-image:url('images/29.jpg');background-size:cover;background-position:center;"></div> -->
+<!-- <div class="portfolio-item" style="background-image:url('images/27.jpg');background-size:cover;background-position:center;"></div> -->
 <div class="portfolio-item" style="background-image:url('images/34.jpg');background-size:cover;background-position:center;"></div>
-
 <div class="portfolio-item" style="background-image:url('images/8.jpg');background-size:cover;background-position:center;"></div>
 <div class="portfolio-item" style="background-image:url('images/26.jpg');background-size:cover;background-position:center;"></div>
 <div class="portfolio-item" style="background-image:url('images/31.jpg');background-size:cover;background-position:center;"></div>
@@ -354,15 +392,15 @@ border-top:1px solid #e7ded7;
 
 <div class="about-content">
 
-<div class="section-title">about</div>
+<div class="section-title"><strong>about</strong></div>
 
 <h2>I’m Irfan — <br>photographer, quiet observer.</h2>
 
 <p>I document weddings and moments as they unfold. My approach is simple: no interference, just an eye for light and the space between people.</p>
-<p><p>
+<!-- <p>
   I’m currently beginning my work in weddings and building a portfolio. 
   I’m offering engagement and couple sessions, and taking on a small number of weddings at a reduced rate.
-  </p></p>
+  </p> -->
 <!-- <div class="stats">
 
 <div class="stat-item">15+<span>weddings</span></div>
@@ -380,6 +418,52 @@ border-top:1px solid #e7ded7;
 </div>
 
 
+<div class="container pricing-section">
+  
+
+  <h2 style="font-size:2.4rem; font-weight:380; max-width:500px; margin:0 auto; text-align:center; color:#a28f83;">
+    Pricing
+    </h2>
+    
+    <p style="margin-top:1rem; color:#6f625a; max-width:500px; margin-left:auto; margin-right:auto; text-align:center;">
+    Currently building my wedding portfolio — offering a small number of weddings at a reduced or complimentary rate.
+    </p>
+
+
+  <div class="pricing-grid">
+  
+  <div class="pricing-card">
+    <div class="pricing-title">Short Session</div>
+    <div class="pricing-desc"><p>Shooting Time: 1.5 hour </p> 
+      <p>Includes: Ceremony & Portraits</p>
+      <p>Photos Delivered:At least 100 images</p></div>
+    <div class="pricing-price">Price $220</div>
+  </div>
+  
+  <div class="pricing-card">
+    <div class="pricing-title">Half Session</div>
+    <div class="pricing-desc">
+      <p>Shooting Time: 2–3 hours</p> 
+      <p>Includes: Ceremony, Portraits, Candid Moments</p>
+      <p>Photos Delivered: ~200 images</p></div>
+    <div class="pricing-price">Price $400</div>
+  </div>
+  
+  <div class="pricing-card">
+    <div class="pricing-title">Full Day</div>
+    <div class="pricing-desc">
+      <p>Shooting Time: 5 hours</p> 
+      <p>Includes: Portraits, Ceremony, Candid & Group photos</p> 
+      <p>Photos Delivered: ~300-350 </p>
+    </div>
+    <div class="pricing-price">Price $600</div>
+  </div>
+  
+  </div>
+  
+  </div>
+<!-- new pricing code ends -->
+
 <div class="contact-section" id="contact">
 
 <div class="container" style="padding:0;">
@@ -389,7 +473,7 @@ border-top:1px solid #e7ded7;
 <div class="contact-left">
 
 <h3>Let’s work together.</h3>
-<p><p>I’m currently taking on a small number of weddings and couple sessions. Reach out and let’s create something honest.</p></p>
+<p>I’m currently taking on a small number of weddings and couple sessions. Reach out and let’s create something honest.</p></p>
 
 </div>
 
