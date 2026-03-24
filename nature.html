@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>In Between | Seattle Wedding Photographer </title>
+<title>In Between | Seattle Wedding Photographer</title>
 
 <style>
 
@@ -57,7 +57,7 @@ header{
   opacity:0.55;
 }
 
-/* PAGE CONTENT */
+/* CONTENT */
 
 .container{
   max-width:1400px;
@@ -65,28 +65,59 @@ header{
   padding:5%;
 }
 
+.page-intro{
+  font-size:1.2rem;
+  color:#a28f83;
+  max-width:600px;
+  font-weight:320;
+  margin:0 auto 2.5rem;
+  text-align:center;
+}
+
+/* GRID */
+
 .events-grid{
   display:grid;
-  grid-template-columns:repeat(3, 1fr);
-  gap:1.8rem;
-  margin:4rem 0 5rem;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:2rem;
+}
+
+/* CARD */
+
+.event-card{
+  display:flex;
+  flex-direction:column;
 }
 
 .event-item{
   background:#f0e9e3;
   aspect-ratio:4/5;
   width:100%;
-  transition:all .2s ease;
-  position:relative;
-  overflow:hidden;
   background-size:cover;
   background-position:center;
+  transition:all .2s ease;
   cursor:pointer;
 }
 
 .event-item:hover{
   transform:scale(.98);
-  opacity:.9;
+  opacity:.95;
+}
+
+/* TEXT BELOW IMAGE */
+
+.event-info{
+  margin-top:0.6rem;
+}
+
+.event-title{
+  font-size:0.95rem;
+  font-weight:500;
+}
+
+.event-subtitle{
+  font-size:0.85rem;
+  color:#7a6f66;
 }
 
 /* LIGHTBOX */
@@ -111,26 +142,6 @@ header{
   box-shadow:0 10px 40px rgba(0,0,0,.5);
 }
 
-.event-label{
-  position:absolute;
-  bottom:12px;
-  left:12px;
-  color:#fff;
-  font-size:0.85rem;
-  letter-spacing:1px;
-  background:rgba(0,0,0,0.4);
-  padding:4px 8px;
-  border-radius:3px;
-}
-.page-intro{
-  font-size:1.2rem;
-  color:#a28f83;
-  max-width:600px;
-  font-weight:320;
-  margin:0 auto 2.5rem;
-  text-align:center;
-}
-
 </style>
 </head>
 
@@ -151,50 +162,99 @@ header{
 
 <div class="container">
 
-  <p class="page-intro">
-    <strong>Personal work — landscapes and moments outside of weddings. (click image to enlarge)</strong>
-  </p>
+<p class="page-intro">
+  <strong>Personal work — landscapes and moments outside of weddings. (click image to enlarge)</strong>
+</p>
+
 <div class="events-grid">
-    
 
-<!-- <div class="event-item" style="background-image:url('images/23.jpeg');"></div> -->
-<div class="event-item" style="background-image:url('images/23.jpeg');">
-  <div class="event-label">Olympic National Park</div>
-</div>
-<div class="event-item" style="background-image:url('images/32.jpeg');">
-  <div class="event-label">Half-Dome Yosemite</div>
-</div>
-<div class="event-item" style="background-image:url('images/20.jpeg');">
-  <div class="event-label">Maple Pass</div>
-</div>
-<div class="event-item" style="background-image:url('images/21.jpeg');">
-  <div class="event-label">Olympic National Park</div>
-</div>
-<div class="event-item" style="background-image:url('images/17.jpeg');">
-  <div class="event-label">San Francisco Botanical Gardens</div>
-</div>
-<div class="event-item" style="background-image:url('images/36.jpg');">
-  <div class="event-label">Muir Woods National Monument</div>
-</div>
-<div class="event-item" style="background-image:url('images/35.jpeg');">
-  <div class="event-label">Spring in Seattle</div>
-</div>
-<div class="event-item" style="background-image:url('images/37.jpeg');">
-  <div class="event-label">Mount Rainer Camping</div>
+<div class="event-card">
+  <div class="event-item" style="background-image:url('images/23.jpeg');"></div>
+  <div class="event-info">
+    <div class="event-title">Olympic National Park</div>
+    <div class="event-subtitle">Washington</div>
+  </div>
 </div>
 
-<div class="event-item" style="background-image:url('images/18.jpg');">
-  <div class="event-label">Yosemite National Park</div>
+<div class="event-card">
+  <div class="event-item" style="background-image:url('images/32.jpeg');"></div>
+  <div class="event-info">
+    <div class="event-title">Half Dome</div>
+    <div class="event-subtitle">Yosemite</div>
+  </div>
 </div>
-<div class="event-item" style="background-image:url('images/25.jpeg');">
-  <div class="event-label">Mailbox Peak</div>
-</div>  
-<div class="event-item" style="background-image:url('images/12.jpeg');">
-  <div class="event-label">South Lake Union</div>
-</div>  
 
-<!-- <div class="event-item" style="background-image:url('images/19.jpg');"></div> -->
+<div class="event-card">
+  <div class="event-item" style="background-image:url('images/20.jpeg');"></div>
+  <div class="event-info">
+    <div class="event-title">Maple Pass</div>
+    <div class="event-subtitle">Washington</div>
+  </div>
+</div>
 
+<div class="event-card">
+  <div class="event-item" style="background-image:url('images/21.jpeg');"></div>
+  <div class="event-info">
+    <div class="event-title">Olympic National Park</div>
+    <div class="event-subtitle">Washington</div>
+  </div>
+</div>
+
+<div class="event-card">
+  <div class="event-item" style="background-image:url('images/17.jpeg');"></div>
+  <div class="event-info">
+    <div class="event-title">Botanical Gardens</div>
+    <div class="event-subtitle">San Francisco</div>
+  </div>
+</div>
+
+<div class="event-card">
+  <div class="event-item" style="background-image:url('images/36.jpg');"></div>
+  <div class="event-info">
+    <div class="event-title">Muir Woods</div>
+    <div class="event-subtitle">California</div>
+  </div>
+</div>
+
+<div class="event-card">
+  <div class="event-item" style="background-image:url('images/35.jpeg');"></div>
+  <div class="event-info">
+    <div class="event-title">Spring</div>
+    <div class="event-subtitle">Seattle</div>
+  </div>
+</div>
+
+<div class="event-card">
+  <div class="event-item" style="background-image:url('images/37.jpeg');"></div>
+  <div class="event-info">
+    <div class="event-title">Mount Rainier</div>
+    <div class="event-subtitle">Washington</div>
+  </div>
+</div>
+
+<div class="event-card">
+  <div class="event-item" style="background-image:url('images/18.jpg');"></div>
+  <div class="event-info">
+    <div class="event-title">Yosemite National Park</div>
+    <div class="event-subtitle">California</div>
+  </div>
+</div>
+
+<div class="event-card">
+  <div class="event-item" style="background-image:url('images/25.jpeg');"></div>
+  <div class="event-info">
+    <div class="event-title">Mailbox Peak</div>
+    <div class="event-subtitle">Washington</div>
+  </div>
+</div>
+
+<div class="event-card">
+  <div class="event-item" style="background-image:url('images/12.jpeg');"></div>
+  <div class="event-info">
+    <div class="event-title">South Lake Union</div>
+    <div class="event-subtitle">Seattle</div>
+  </div>
+</div>
 
 </div>
 
