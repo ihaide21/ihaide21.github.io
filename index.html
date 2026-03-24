@@ -320,6 +320,43 @@ font-weight:400;
 letter-spacing:-0.02em;
 }
 
+/* contact form code css */
+.contact-form{
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
+  max-width:320px;
+}
+
+.contact-form input,
+.contact-form textarea{
+  background:transparent;
+  border:none;
+  border-bottom:1px solid #7f7168;
+  padding:.5rem 0;
+  color:#fff;
+  font-size:.95rem;
+}
+
+.contact-form textarea{
+  min-height:80px;
+  resize:none;
+}
+
+.contact-form button{
+  margin-top:1rem;
+  background:#a28f83;
+  color:#fff;
+  border:none;
+  padding:0.8rem 1.2rem;
+  font-size:0.9rem;
+  cursor:pointer;
+  border-radius:2px;
+}
+
+.contact-form button:hover{
+  border-color:#fff;
+}
 
 </style>
 </head>
@@ -397,19 +434,7 @@ letter-spacing:-0.02em;
 <h2>I’m Irfan — <br>photographer, quiet observer.</h2>
 
 <p>I document weddings and moments as they unfold. My approach is simple: no interference, just an eye for light and the space between people.</p>
-<!-- <p>
-  I’m currently beginning my work in weddings and building a portfolio. 
-  I’m offering engagement and couple sessions, and taking on a small number of weddings at a reduced rate.
-  </p> -->
-<!-- <div class="stats">
 
-<div class="stat-item">15+<span>weddings</span></div>
-
-<div class="stat-item">5+<span>years</span></div>
-
-<div class="stat-item">∞<span>film frames</span></div>
-
-</div> -->
 
 </div>
 
@@ -466,44 +491,36 @@ letter-spacing:-0.02em;
 
 <div class="contact-section" id="contact">
 
-<div class="container" style="padding:0;">
+  <div class="container" style="padding:0;">
 
-<div class="contact-flex">
+    <div class="contact-flex">
 
-<div class="contact-left">
+      <div class="contact-left">
+        <h3>Let’s work together.</h3>
+        <p>I’m currently taking on a small number of weddings and couple sessions. Reach out and let’s create something honest.</p>
+      </div>
 
-<h3>Let’s work together.</h3>
-<p>I’m currently taking on a small number of weddings and couple sessions. Reach out and let’s create something honest.</p></p>
+      <div class="contact-right">
 
-</div>
+        <form action="https://formspree.io/f/mjganebp" method="POST" class="contact-form">
 
-<div class="contact-right">
+          <input type="hidden" name="_subject" value="New Wedding Inquiry">
+        
+          <input type="text" name="name" placeholder="your name" required>
+        
+          <input type="email" name="email" placeholder="your email" required>
+        
+          <textarea name="message" placeholder="tell me about your wedding or session" required></textarea>
+        
+          <button type="submit">Send inquiry →</button>
+        
+        </form>
 
-  <a href="mailto:ihaide21@gmail.com" class="email">
-  Inquire — ihaide21@gmail.com
-  </a>
-  
-  <div style="margin-top:1rem; font-size:0.9rem; color:#bfb2a8;">
-  Currently booking a small number of weddings & couple sessions
+      </div>
+
+    </div>
+
   </div>
-  
-  <div class="contact-details">
-  
-  +1 (206) 940 8231<br>
-  
-  Seattle 
-  
-  </div>
-  
-  </div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
 
 </div>
 
