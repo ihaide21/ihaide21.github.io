@@ -222,11 +222,11 @@ margin-top:.5rem;
 .contact-flex{
   display:flex;
   flex-wrap:wrap;
-  justify-content:center;
+  justify-content:space-between;
   align-items:center;
   gap:4rem;
-  max-width:1000px;   /* 👈 ADD THIS */
-  margin:0 auto;      /* 👈 ADD THIS */
+  max-width:1100px;   
+  margin:0 auto;      
 }
 .contact-left{
   max-width:360px;
@@ -286,18 +286,18 @@ border-top:1px solid #e7ded7;
 
 .pricing-section{
 margin:6rem auto;
-max-width:1100px;
+max-width:1250px;
 }
 
 .pricing-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:2rem;
+gap:1.5rem;
 margin-top:2.5rem;
 }
 
 .pricing-card{
-padding:2rem;
+padding:1.5rem;
 border:1px solid #e7ded7;
 background:#fff;
 transition:all .2s ease;
@@ -426,7 +426,7 @@ input[type="date"]::-webkit-calendar-picker-indicator{
 <!-- <a href="#" class="logo"><span>Irfan Photography</span> </a> -->
 <a href="#" class="logo"><span style="font-weight:600;">Irfan Photography</span></a>
 <div class="nav-links">
-  <a href="#weddings">weddings</a>
+  <a href="#work">work</a>
   <a href="pets.html">pets</a>
   <a href="nature.html">nature</a>
   <a href="#about">about</a>
@@ -440,12 +440,13 @@ input[type="date"]::-webkit-calendar-picker-indicator{
 
 <div class="hero-content">
 
-<h1>Weddings, captured as they <em>felt.</em> </h1>
+<h1>Moments, captured as they <em>felt.</em> </h1>
 
 <!-- <p>Documentary-style photography for intimate weddings.</p> -->
 
 <p>Seattle based. Available for weddings, engagements, and events.</p>
-<p style="margin-top:1rem; color:#6f625a;"> Currently offering a limited number of sessions and weddings at a reduced rate while building my portfolio.
+<p style="margin-top:1rem; color:#6f625a;"> A collection of personal work and recent sessions. Currently taking on a limited number of weddings and events at a reduced rate.
+ 
 </p>
 
 </div>
@@ -455,7 +456,7 @@ input[type="date"]::-webkit-calendar-picker-indicator{
 
 <!-- WEDDINGS SECTION -->
 
-<div class="container" id="weddings">
+<div class="container" id="work">
 
 <!-- <div class="section-title">weddings</div> -->
 
@@ -525,7 +526,12 @@ input[type="date"]::-webkit-calendar-picker-indicator{
     <div class="pricing-desc"><p>Shooting Time: 1.5 hour </p> 
       <p>Includes: Ceremony & Portraits</p>
       <p>Photos Delivered:At least 100 images</p></div>
-    <div class="pricing-price">Price $220</div>
+      <div class="pricing-price">
+        $220
+        <div style="font-size:0.75rem; color:#a28f83; margin-top:0.3rem;">
+          introductory rate
+        </div>
+      </div>
   </div>
   
   <div class="pricing-card">
@@ -534,7 +540,12 @@ input[type="date"]::-webkit-calendar-picker-indicator{
       <p>Shooting Time: 2–3 hours</p> 
       <p>Includes: Ceremony, Portraits, Candid Moments</p>
       <p>Photos Delivered: ~200 images</p></div>
-    <div class="pricing-price">Price $400</div>
+      <div class="pricing-price">
+        $400
+        <div style="font-size:0.75rem; color:#a28f83; margin-top:0.3rem;">
+          introductory rate
+        </div>
+      </div>
   </div>
   
   <div class="pricing-card">
@@ -544,7 +555,12 @@ input[type="date"]::-webkit-calendar-picker-indicator{
       <p>Includes: Portraits, Ceremony, Candid & Group photos</p> 
       <p>Photos Delivered: ~300-350 </p>
     </div>
-    <div class="pricing-price">Price $600</div>
+    <div class="pricing-price">
+      $600
+      <div style="font-size:0.75rem; color:#a28f83; margin-top:0.3rem;">
+        introductory rate
+      </div>
+    </div>
   </div>
   
   </div>
@@ -559,7 +575,7 @@ input[type="date"]::-webkit-calendar-picker-indicator{
     <div class="contact-flex">
 
       <div class="contact-left">
-        <h3>Let’s work together.</h3>
+        <h3>Let’s create something meaningful.</h3>
         <p>I photograph weddings, engagements, and events as they naturally unfold.
           Reach out and let’s create something honest and lasting.</p>
       </div>
@@ -572,7 +588,7 @@ input[type="date"]::-webkit-calendar-picker-indicator{
         <div class="inquire-box"><strong>Inquire</strong></div>
 
         <form action="https://formspree.io/f/mjganebp" method="POST" class="contact-form">
-
+          
           <input type="hidden" name="_subject" value="New Wedding Inquiry">
         
           <input type="text" name="name" placeholder="Your Name" required>
@@ -587,6 +603,13 @@ input[type="date"]::-webkit-calendar-picker-indicator{
           <button type="submit">Send inquiry →</button>
         
         </form>
+
+        <div style="margin-top:1.5rem; font-size:0.85rem; color:#b1a39a;">
+          Prefer email? Reach me at:  
+          <a href="mailto:ihaide21@email.com" style="color:#fff; text-decoration:none; border-bottom:1px solid #7f7168;">
+            ihaide21@email.com
+          </a>
+        </div>
 
       </div>
 
