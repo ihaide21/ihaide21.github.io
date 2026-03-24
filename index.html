@@ -446,11 +446,11 @@ input[type="date"]::-webkit-calendar-picker-indicator{
 
 <p>Seattle-based photographer documenting weddings, engagements, and gatherings.</p>
 <p style="margin-top:1rem; color:#6f625a;"> A collection of personal work and recent sessions. Currently taking on a limited number of weddings and events at a reduced rate.
-
+</p>
   <p style="text-align:left; font-size:0.85rem; color:#8f8177; margin-top:1.8rem;">
     <strong>All images on this site are original work.</strong>
-    </p>  
-</p>
+  </p>  
+
 
 </div>
 
@@ -598,8 +598,12 @@ input[type="date"]::-webkit-calendar-picker-indicator{
 
           <input type="email" name="email" placeholder="Your Email" required>
           
-          <input type="date" name="Event_Date">
-          
+          <div style="font-size:0.75rem; color:#8f8177; margin-bottom:-0.8rem;">
+            Date of the Event
+            </div>
+            
+          <input type="date" name="event_date" id="eventDate">
+
           <input type="text" name="location" placeholder="Event Location">
           
           <textarea name="message" placeholder="Please share details about your event (wedding, engagement, family session, baby shower, etc.)" required></textarea>        
@@ -685,6 +689,8 @@ lightbox.addEventListener("click", () => {
   lightbox.style.display = "none";
 });
 
+const today = new Date().toISOString().split("T")[0];
+document.getElementById("eventDate").setAttribute("min", today);
 </script>
 
 
